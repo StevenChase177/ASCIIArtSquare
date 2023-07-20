@@ -5,11 +5,31 @@
     </title>
     <body>
         <h1> ASCII Art Square</h1>
-
         <p id="square"></p>
-
         <script>
-
+            function makeASCIIArt(string){{
+                // checks to see if the number between 3 and 30 
+            if(string >= 3 && string <= 30){
+                // creates in empty string fo hold the ascii square
+                let square= ""
+                // the first loop generates the begging and end of each row. 
+              for(let i=0; i < string; i++){
+                // fills in each row with *
+                for(let q=0; q<string; q++ ){
+                  square+= "*"
+                }
+                square+="<br>"
+              }
+              // places the ascii square in the p tag 
+              document.getElementById("square").innerHTML = square
+            }else {
+                // alerts if the user did not hold a number between 3 and 30 and calls the function again
+                alert("please enter a number between 3 and 30")
+                makeASCIIArt(prompt("please enter a number btween 3 and 30"))
+                }   
+            }
+        }
+            makeASCIIArt(prompt("please enter a number btween 3 and 30"))
         </script>
     </body>
 </html>
